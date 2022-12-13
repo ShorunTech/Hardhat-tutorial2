@@ -25,3 +25,7 @@ function getPrice() external view returns (uint256);
     function purchase(uint256 _tokenId) external payable;
 }
 
+/**
+ * Minimal interface for CryptoDevsNFT containing only two functions
+ * that we are interested in
+ */
