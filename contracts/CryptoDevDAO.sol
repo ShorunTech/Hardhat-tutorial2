@@ -29,3 +29,11 @@ function getPrice() external view returns (uint256);
  * Minimal interface for CryptoDevsNFT containing only two functions
  * that we are interested in
  */
+
+interface ICryptoDevsNFT {
+    /// @dev balanceOf returns the number of NFTs owned by the given address
+    /// @param owner - address to fetch number of NFTs for
+    /// @return Returns the number of NFTs owned
+    function balanceOf(address owner) external view returns (uint256);
+
+
