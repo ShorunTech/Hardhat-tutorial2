@@ -45,3 +45,7 @@ interface ICryptoDevsNFT {
         view
         returns (uint256);
 }
+
+
+// Create a struct named Proposal containing all relevant information
+struct Proposal {
