@@ -55,3 +55,5 @@ struct Proposal {
     uint256 deadline;
 // yayVotes - number of yay votes for this proposal
     uint256 yayVotes;    
+// nayVotes - number of nay votes for this proposal
+    uint256 nayVotes;
