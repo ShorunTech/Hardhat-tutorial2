@@ -49,3 +49,5 @@ interface ICryptoDevsNFT {
 
 // Create a struct named Proposal containing all relevant information
 struct Proposal {
+// nftTokenId - the tokenID of the NFT to purchase from FakeNFTMarketplace if the proposal passes
+    uint256 nftTokenId;
