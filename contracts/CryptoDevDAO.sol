@@ -52,4 +52,6 @@ struct Proposal {
 // nftTokenId - the tokenID of the NFT to purchase from FakeNFTMarketplace if the proposal passes
     uint256 nftTokenId;
 // deadline - the UNIX timestamp until which this proposal is active. Proposal can be executed after the deadline has been exceeded.
-    uint256 deadline;    
+    uint256 deadline;
+// yayVotes - number of yay votes for this proposal
+    uint256 yayVotes;    
