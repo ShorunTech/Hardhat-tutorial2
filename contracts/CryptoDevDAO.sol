@@ -57,3 +57,6 @@ struct Proposal {
     uint256 yayVotes;    
 // nayVotes - number of nay votes for this proposal
     uint256 nayVotes;
+// executed - whether or not this proposal has been executed yet. Cannot be executed before the deadline has been exceeded.
+    bool executed;
+
