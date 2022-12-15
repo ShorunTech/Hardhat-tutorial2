@@ -73,3 +73,10 @@ contract CryptoDevsDAO is Ownable {
         nftMarketplace = IFakeNFTMarketplace(_nftMarketplace);
         cryptoDevsNFT = ICryptoDevsNFT(_cryptoDevsNFT);
     }
+
+   // Create a modifier which only allows a function to be
+    // called by someone who owns at least 1 CryptoDevsNFT
+    modifier nftHolderOnly() {
+        require(cryptoDevsNFT.balanceOf(msg.sender) > 0, "NOT_A_DAO_MEMBER");
+        _;
+    }
