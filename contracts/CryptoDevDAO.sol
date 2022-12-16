@@ -163,6 +163,12 @@ contract CryptoDevsDAO is Ownable {
         }
         proposal.executed = true;
     }
+
+     /// @dev withdrawEther allows the contract owner (deployer) to withdraw the ETH from the contract
+    function withdrawEther() external onlyOwner {
+        payable(owner()).transfer(address(this).balance);
+    }
+
         
 
 
