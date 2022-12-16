@@ -102,3 +102,9 @@ contract CryptoDevsDAO is Ownable {
         );
         _;
     }
+   // Create an enum named Vote containing possible options for a vote
+    enum Vote {
+        YAY, // YAY = 0
+        NAY // NAY = 1
+    }
+
