@@ -144,3 +144,16 @@ contract CryptoDevsDAO is Ownable {
         );
         _;
     }
+
+  /// @dev executeProposal allows any CryptoDevsNFT holder to execute a proposal after it's deadline has been exceeded
+    /// @param proposalIndex - the index of the proposal to execute in the proposals array
+    function executeProposal(uint256 proposalIndex)
+        external
+        nftHolderOnly
+        inactiveProposalOnly(proposalIndex)
+    {
+        Proposal storage proposal = proposals[proposalIndex];
+
+        
+
+
