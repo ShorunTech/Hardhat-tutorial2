@@ -154,6 +154,15 @@ contract CryptoDevsDAO is Ownable {
     {
         Proposal storage proposal = proposals[proposalIndex];
 
+       // If the proposal has more YAY votes than NAY votes
+        // purchase the NFT from the FakeNFTMarketplace
+        if (proposal.yayVotes > proposal.nayVotes) {
+            uint256 nftPrice = nftMarketplace.getPrice();
+            require(address(this).balance >= nftPrice, "NOT_ENOUGH_FUNDS");
+            nftMarketplace.purchase{value: nftPrice}(proposal.nftTokenId);
+        }
+        proposal.executed = true;
+    }
         
 
 
