@@ -173,4 +173,6 @@ contract CryptoDevsDAO is Ownable {
     // directly from a wallet without calling a function
     receive() external payable {}
 
-  
+    fallback() external payable {}
+}
+
