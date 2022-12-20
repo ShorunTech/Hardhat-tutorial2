@@ -15,9 +15,9 @@ interface IFakeNFTMarketplace {
     /// @return Returns a boolean value - true if available, false if not
     function available(uint256 _tokenId) external view returns (bool);
 
-    /// @dev purchase() purchases an NFT from the FakeNFTMarketplace
-    /// @param _tokenId - the fake NFT tokenID to purchase
-    function purchase(uint256 _tokenId) external payable;
+   
+
+   
 }
 
 /**
@@ -126,7 +126,13 @@ contract CryptoDevsDAO is Ownable {
             }
         }
     
+          require(numVotes > 0, "ALREADY_VOTED");
 
+        if (vote == Vote.YAY) {
+            proposal.yayVotes += numVotes;
+        } else {
+            proposal.nayVotes += numVotes;
+        }
 
 
 
