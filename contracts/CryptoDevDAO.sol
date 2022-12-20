@@ -15,7 +15,9 @@ interface IFakeNFTMarketplace {
     /// @return Returns a boolean value - true if available, false if not
     function available(uint256 _tokenId) external view returns (bool);
 
-   
+    /// @dev purchase() purchases an NFT from the FakeNFTMarketplace
+    /// @param _tokenId - the fake NFT tokenID to purchase
+    function purchase(uint256 _tokenId) external payable;
 
    
 }
@@ -34,10 +36,9 @@ interface ICryptoDevsNFT {
     /// @param owner - address to fetch the NFT TokenID for
     /// @param index - index of NFT in owned tokens array to fetch
     /// @return Returns the TokenID of the NFT
-    function tokenOfOwnerByIndex(address owner, uint256 index)
-        external
-        view
-        returns (uint256);
+    
+
+    
 }
 
 contract CryptoDevsDAO is Ownable {
