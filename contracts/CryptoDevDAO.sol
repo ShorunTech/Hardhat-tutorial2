@@ -74,12 +74,7 @@ contract CryptoDevsDAO is Ownable {
         cryptoDevsNFT = ICryptoDevsNFT(_cryptoDevsNFT);
     }
 
-    // Create a modifier which only allows a function to be
-    // called by someone who owns at least 1 CryptoDevsNFT
-    modifier nftHolderOnly() {
-        require(cryptoDevsNFT.balanceOf(msg.sender) > 0, "NOT_A_DAO_MEMBER");
-        _;
-    }
+  
 
     function createProposal(uint256 _nftTokenId)
         external
@@ -102,7 +97,11 @@ contract CryptoDevsDAO is Ownable {
         );
         _;
     }
-
+     // Create an enum named Vote containing possible options for a vote
+    enum Vote {
+        YAY, // YAY = 0
+        NAY // NAY = 1
+    }
 
     function voteOnProposal(uint256 proposalIndex, Vote vote)
         external
