@@ -67,7 +67,6 @@ contract CryptoDevsDAO is Ownable {
     ICryptoDevsNFT cryptoDevsNFT;
 
    
-
     // Create an enum named Vote containing possible options for a vote
         enum Vote {
         YAY, // YAY = 0
