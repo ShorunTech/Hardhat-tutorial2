@@ -66,6 +66,16 @@ contract CryptoDevsDAO is Ownable {
     IFakeNFTMarketplace nftMarketplace;
     ICryptoDevsNFT cryptoDevsNFT;
 
+      // Create a payable constructor which initializes the contract
+    // instances for FakeNFTMarketplace and CryptoDevsNFT
+    // The payable allows this constructor to accept an ETH deposit when it is being deployed
+    constructor(address _nftMarketplace, address _cryptoDevsNFT) payable {
+        nftMarketplace = IFakeNFTMarketplace(_nftMarketplace);
+        cryptoDevsNFT = ICryptoDevsNFT(_cryptoDevsNFT);
+    }
+
+
+
    // Create a modifier which only allows a function to be
     // called by someone who owns at least 1 CryptoDevsNFT
     modifier nftHolderOnly() {
@@ -73,7 +83,6 @@ contract CryptoDevsDAO is Ownable {
         _;
     }
 
-    
 
 
     function createProposal(uint256 _nftTokenId)
