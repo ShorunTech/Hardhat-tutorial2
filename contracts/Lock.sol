@@ -16,8 +16,9 @@ contract Lock {
             "Unlock time should be in the future"
         );
 
-        unlockTime = _unlockTime;
-        owner = payable(msg.sender);
+ 
+
+ 
     }
 
     function withdraw() public {
