@@ -5,8 +5,7 @@ pragma solidity ^0.8.9;
 // import "hardhat/console.sol";
 
 contract Lock {
-    uint public unlockTime;
-    address payable public owner;
+    
 
     event Withdrawal(uint amount, uint when);
 
@@ -16,10 +15,12 @@ contract Lock {
             "Unlock time should be in the future"
         );
 
- 
+    contract Lock {
+    uint public unlockTime;
+    address payable public owner;
 
  
-    }
+}
 
     function withdraw() public {
         // Uncomment this line, and the import of "hardhat/console.sol", to print a log in your terminal
