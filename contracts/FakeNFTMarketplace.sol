@@ -14,7 +14,10 @@ contract FakeNFTMarketplace {
         tokens[_tokenId] = msg.sender;
     }
 
- 
+    /// @dev getPrice() returns the price of one NFT
+    function getPrice() external view returns (uint256) {
+        return nftPrice;
+    }
 
     /// @dev available() checks whether the given tokenId has already been sold or not
     /// @param _tokenId - the tokenId to check for
