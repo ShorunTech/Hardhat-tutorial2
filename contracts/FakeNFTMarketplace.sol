@@ -23,7 +23,7 @@ contract FakeNFTMarketplace {
     /// @dev available() checks whether the given tokenId has already been sold or not
     /// @param _tokenId - the tokenId to check for
     function available(uint256 _tokenId) external view returns (bool) {
-        // address(0) = 0x0000000000000000000000000000000000000000
+        
         // This is the default value for addresses in Solidity
         if (tokens[_tokenId] == address(0)) {
             return true;
