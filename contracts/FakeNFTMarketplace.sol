@@ -14,7 +14,8 @@ contract FakeNFTMarketplace {
         tokens[_tokenId] = msg.sender;
     }
 
-   
+    /// @dev getPrice() returns the price of one NFT
+ 
     function getPrice() external view returns (uint256) {
         return nftPrice;
     }
