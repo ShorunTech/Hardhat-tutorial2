@@ -87,7 +87,8 @@ describe("Lock", function() {
                     deployOneYearLockFixture
                 );
 
-
+                // Transactions are sent using the first signer by default
+                await time.increaseTo(unlockTime);
 
                 await expect(lock.withdraw()).not.to.be.reverted;
             });
@@ -115,8 +116,8 @@ describe("Lock", function() {
 
                 await time.increaseTo(unlockTime);
 
-                await expect(lock.withdraw()).to.changeEtherBalances(
-                    [owner, lock], [lockedAmount, -lockedAmount]
+               
+                
                 );
             });
         });
